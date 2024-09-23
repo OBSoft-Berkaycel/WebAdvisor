@@ -40,7 +40,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Bottom Navigation Example'),
+        title: const Text('WebAdvisor'),
+        backgroundColor: Colors.lightBlue[300],
+        titleTextStyle: const TextStyle(color: Colors.white,fontWeight: FontWeight.w800, fontSize: 20),
       ),
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: Container(
@@ -73,9 +75,6 @@ class _HomeScreenState extends State<HomeScreen> {
           selectedItemColor: Colors.amber[800],
           unselectedItemColor: Colors.lightBlue[300], // Seçilmemiş item rengi
           onTap: _onItemTapped,
-          backgroundColor: Colors.transparent, // Arka plan rengini transparan yaptık
-          selectedLabelStyle: TextStyle(color: Colors.amber[800]),
-          unselectedLabelStyle: TextStyle(color: Colors.lightBlue[300]),
         ),
       ),
     );
@@ -89,12 +88,12 @@ class ScrollableCardList extends StatelessWidget {
       itemCount: 15,
       itemBuilder: (context, index) {
         return Card(
-          margin: EdgeInsets.all(10),
+          margin: const EdgeInsets.all(10),
           child: Padding(
             padding: const EdgeInsets.all(15.0),
             child: Text(
               'Card Item $index',
-              style: TextStyle(fontSize: 18),
+              style: const TextStyle(fontSize: 18),
             ),
           ),
         );
